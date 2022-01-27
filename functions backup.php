@@ -7,7 +7,6 @@
  * @package theme-task
  */
 
-
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
 	define( '_S_VERSION', '1.0.0' );
@@ -21,14 +20,12 @@ if ( ! defined( '_S_VERSION' ) ) {
  * as indicating support for post thumbnails.
  */
 function theme_task_setup() {
-	
-	
 	/*
 		* Make theme available for translation.
 		* Translations can be filed in the /languages/ directory.
 		* If you're building a theme based on theme-task, use a find and replace
 		* to change 'theme-task' to the name of your theme in all the template files.
-			*/
+		*/
 	load_theme_textdomain( 'theme-task', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
@@ -141,7 +138,6 @@ add_action( 'widgets_init', 'theme_task_widgets_init' );
  * Enqueue scripts and styles.
  */
 function theme_task_scripts() {
-	wp_enqueue_style( 'reset.css', get_theme_file_uri( '/css/reset.css' ) );
 	wp_enqueue_style( 'theme-task-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'theme-task-style', 'rtl', 'replace' );
 

@@ -39,13 +39,11 @@
 				<?php
 			endif;
 			$theme_task_description = get_bloginfo( 'description', 'display' );
-			/* 追加：トップページじゃない場合ディスクリプション表示*/
-			if ( !is_front_page() && !is_home()) : /* $theme_task_description || is_customize_preview()*/
+			if ( $theme_task_description || is_customize_preview() ) :
 				?>
 				<p class="site-description"><?php echo $theme_task_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
-	
 
 		<nav id="site-navigation" class="main-navigation">
 			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'theme-task' ); ?></button>
@@ -58,13 +56,6 @@
 			);
 			?>
 		</nav><!-- #site-navigation -->
-		
 		<!--font awesome-->
 		<script src="https://kit.fontawesome.com/078cca1e93.js" crossorigin="anonymous"></script>
 	</header><!-- #masthead -->
-	<div class="breadcrumbs" typeof="BreadcrumbList" vocab="https://schema.org/">
-    		<?php if(function_exists('bcn_display'))
-   			 {
-       				 bcn_display();
-  			  }?>
-		</div>
